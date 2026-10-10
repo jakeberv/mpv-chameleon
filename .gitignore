@@ -1,0 +1,16 @@
+.build/
+.research/
+.superpowers/
+.DS_Store
+*.log
+*.mp4
+*.mkv
+*.mov
+*.webm
+
+__pycache__/
+*.pyc
+# Playback screenshots may contain private or non-redistributable media.
+mpv-shot*.jpg
+mpv-shot*.png
+mpv-shot*.webp

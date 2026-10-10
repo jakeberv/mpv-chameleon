@@ -1,0 +1,28 @@
+name: Bug report
+description: Report a reproducible mpv-chameleon problem
+title: "[Bug]: "
+body:
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Expected and actual behavior
+      description: Include source format, starting display, and the transition that failed.
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: macOS, chip, mpv --version, renderer, display types, and chameleon version.
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Sanitized evidence
+      description: Relevant chameleon and selected Metal/Vulkan colorspace lines. Remove paths, serials, URLs, tokens, and private filenames. Do not attach video files.
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction steps
+      description: Minimal configuration and source color tags, if known.

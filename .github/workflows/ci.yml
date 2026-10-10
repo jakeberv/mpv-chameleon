@@ -1,0 +1,24 @@
+name: mpv-chameleon checks
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  portable:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - name: Install test tools
+        run: sudo apt-get update && sudo apt-get install -y lua5.1 shellcheck
+      - name: Validate scripts and repository
+        run: ./tools/check.sh
+  macos:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - name: Install test tools
+        run: brew install lua shellcheck
+      - name: Validate scripts and compile native helper
+        run: ./tools/check.sh
